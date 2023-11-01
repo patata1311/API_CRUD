@@ -1,0 +1,88 @@
+swagger: "2.0"
+info:
+  title: "API de Usuarios"
+  description: "API para gestionar usuarios"
+  version: "1.0.0"
+schemes:
+  - "http"
+basePath: "/"
+
+paths:
+  /usuarios:
+    post:
+      tags:
+        - "Usuarios"
+      summary: "Actualizar información de un usuario"
+      parameters:
+        - name: usuario
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/Usuario"
+      responses:
+        200:
+          description: "Usuario creado"
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+
+
+  /usuarios/{usuario_id}:
+    parameters:
+      - name: usuario_id
+        in: path
+        description: ID del usuario
+        required: true
+        type: integer
+    get:
+      tags:
+        - "Usuarios"
+      summary: "Obtener información de un usuario"
+      responses:
+        200:
+          description: "Información del usuario"
+
+    put:
+      tags:
+        - "Usuarios"
+      summary: "Actualizar información de un usuario"
+      parameters:
+        - name: usuario
+          in: body
+          required: true
+          schema:
+            $ref: "#/definitions/Usuario"
+      responses:
+        203:
+          description: "Usuario actualizado"
+        404:
+          description: "Usuario no encontrado"
+    
+    delete:
+      tags:
+        - "Usuarios"
+      summary: "Eliminar un usuario"
+      responses:
+        202:
+          description: "Usuario eliminado"
+        404:
+          description: "Usuario no encontrado"
+
+  
+
+definitions:
+  Usuario:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      nombre:
+        type: string
+      telefono:
+        type: integer
+        format: int32
+      estado:
+        type: string
