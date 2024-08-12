@@ -1,0 +1,11 @@
+{
+	"name": "AzureBlobStorage1",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"containerUri": "https://almacenamientpo.blob.core.windows.net/ppp",
+			"authenticationType": "Anonymous"
+		}
+	}
+}
