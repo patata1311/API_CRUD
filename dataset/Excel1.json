@@ -9,8 +9,10 @@
 		"type": "Excel",
 		"typeProperties": {
 			"location": {
-				"type": "HttpServerLocation"
-			}
+				"type": "HttpServerLocation",
+				"relativeUrl": "/uc?export=download&id=1akWp98T-7iRt7f2fJrUK8dfSgu4Ilxe5"
+			},
+			"firstRowAsHeader": true
 		},
 		"schema": []
 	}
